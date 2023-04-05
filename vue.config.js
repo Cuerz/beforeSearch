@@ -1,5 +1,8 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 // 复制文件到指定目录
 const copyFiles = [
@@ -18,11 +21,9 @@ const copyFiles = [
 ]
 
 // 复制插件
-const plugins = [
-  new CopyWebpackPlugin({
-    patterns: copyFiles,
-  }),
-]
+const plugin = new CopyWebpackPlugin({
+  patterns: copyFiles,
+})
 
 // 页面文件
 const pages = {}
@@ -47,8 +48,17 @@ module.exports = {
     output: {
       filename: 'js/[name].js',
     },
-    plugins,
-  }, // 配置 content.css
+    plugins: [
+      plugin,
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ],
+  },
+  // 配置 content.css
   css: {
     extract: {
       filename: 'css/[name].css',
