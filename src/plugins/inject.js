@@ -1,1 +1,1 @@
-console.log(inje);
+console.log('injecttest');

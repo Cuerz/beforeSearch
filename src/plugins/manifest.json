@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "beforeSearch",
-  "description": "vue3版本的chrome插件",
+  "description": "一款实现资产测绘、信息收集、隐私提取、编码转换等功能的chrome插件，方便安全人员日常工作学习。",
   "version": "1.0.0",
   "icons": {
     "16": "assets/icon16.png",

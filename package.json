@@ -11,7 +11,10 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "element-plus": "^2.3.2",
-    "vue": "^3.2.13"
+    "js-base64": "^3.7.5",
+    "js-md5": "^0.7.3",
+    "vue": "^3.2.13",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
