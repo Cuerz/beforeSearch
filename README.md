@@ -10,7 +10,7 @@
 
 下载release新版本，将解压后的dist文件夹拖入到谷歌浏览器插件页面即可
 
-![image-20230406171515532](/Users/cuerz/Library/Application Support/typora-user-images/image-20230406171515532.png)
+![img](img/9A73F836-4011-4F19-9E3E-7C2786FD1EB2.png)
 
 后期功能丰富后打算尝试上线谷歌商店。
 
@@ -20,4 +20,4 @@
 
 实现编码转换功能，包括base64编码解码，url编码解码，md5加密，unicode编码解码，hex编码解码。
 
-![image-20230406172501903](/Users/cuerz/Library/Application Support/typora-user-images/image-20230406172501903.png)
+![img](img/C102C973-63E1-47B8-B8FE-56F98882642A.png)
