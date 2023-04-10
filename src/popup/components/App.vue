@@ -5,14 +5,14 @@
         <el-menu
           class="el-menu-main"
           mode="horizontal"
-          default-active="/transcode"
+          default-active="/assetmap"
           router="true"
         >
+          <el-menu-item class="menu-item" index="/assetmap"
+            >资产测绘</el-menu-item
+          >
           <el-menu-item class="menu-item" index="/transcode"
             >编码转换</el-menu-item
-          >
-          <el-menu-item class="menu-item" index="2" disabled
-            >资产测绘</el-menu-item
           >
           <el-menu-item class="menu-item" index="3" disabled
             >信息收集</el-menu-item
@@ -40,7 +40,6 @@ export default {}
 .popup {
   width: 680px;
   height: auto;
-  color: red;
 
   .popup-header {
     height: auto;

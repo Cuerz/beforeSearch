@@ -26,8 +26,8 @@ export default {
 .main{
   height: 520px;
   .menu-item {
-  height: 39px;
-}
+    height: 39px;
+  }
 
 }
 

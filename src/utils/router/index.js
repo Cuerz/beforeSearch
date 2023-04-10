@@ -1,4 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import AssetMap from '@/popup/components/AssetMap/AssetMap.vue'
+import FofaSearch from '@/popup/components/AssetMap/components/Fofa.vue'
+import HunterSearch from '@/popup/components/AssetMap/components/Hunter.vue'
 import TransCode from '@/popup/components/TransCode/TransCode.vue'
 import Base64Code from '@/popup/components/TransCode/components/Base64.vue'
 import UrlCode from '@/popup/components/TransCode/components/Url.vue'
@@ -10,7 +13,25 @@ import GlobalConfig from '@/popup/components/GlobalConfig.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/transcode',
+    redirect: '/assetmap',
+  },
+  {
+    path: '/assetmap',
+    redirect: '/assetmap/fofa',
+    name: 'assetmap',
+    component: AssetMap,
+    children: [
+      {
+        path: 'fofa',
+        name: 'fofa',
+        component: FofaSearch,
+      },
+      {
+        path: 'hunter',
+        name: 'hunter',
+        component: HunterSearch,
+      },
+    ],
   },
   {
     path: '/transcode',

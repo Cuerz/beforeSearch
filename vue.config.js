@@ -1,5 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
+const Icons = require('unplugin-icons/webpack')
+const IconsResolver = require('unplugin-icons/resolver')
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
@@ -51,10 +53,23 @@ module.exports = {
     plugins: [
       plugin,
       AutoImport({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver(),
+          IconsResolver({
+            prefix: 'Icon',
+          }),
+        ],
       }),
       Components({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver(),
+          IconsResolver({
+            enabledCollections: ['ep'],
+          }),
+        ],
+      }),
+      Icons({
+        autoInstall: true,
       }),
     ],
   },
