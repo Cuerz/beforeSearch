@@ -21,3 +21,9 @@
 实现编码转换功能，包括base64编码解码，url编码解码，md5加密，unicode编码解码，hex编码解码。
 
 ![img](img/C102C973-63E1-47B8-B8FE-56F98882642A.png)
+
+### 2023.4.10
+
+增加fofa查询功能，配置email和apikey后调用fofa官方api进行查询资产
+
+![img](img/24EE87F3-545F-4346-A652-9ECB435F4DB1.png)
