@@ -72,6 +72,7 @@ export default {
   },
   methods: {
     f_go() {
+      this.tableData = []
       let data = {
         email: this.fofa_email,
         key: this.fofa_apikey,
@@ -79,8 +80,9 @@ export default {
         qbase64: Base64.encode(this.f_sentence),
       }
       fofa_go(data).then((res) => {
+        console.log(res)
         if (!res.error) {
-          res.results.forEach(element => {
+          res.results.forEach((element) => {
             var one_info = {
               ip: element[0],
               port: element[1],
@@ -89,7 +91,12 @@ export default {
               server: element[4],
             }
             this.tableData.push(one_info)
-          });
+          })
+        } else {
+          ElMessage({
+            message: res.errmsg,
+            type: 'error',
+          })
         }
       })
     },
