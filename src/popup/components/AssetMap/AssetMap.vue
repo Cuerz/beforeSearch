@@ -7,7 +7,7 @@
       router="true"
     >
       <el-menu-item class="menu-item" index="/assetmap/fofa">fofa</el-menu-item>
-      <el-menu-item class="menu-item" index="/assetmap/hunter" disabled>hunter</el-menu-item>
+      <el-menu-item class="menu-item" index="/assetmap/hunter">hunter</el-menu-item>
     </el-menu>
     <RouterView />
   </div>
