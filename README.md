@@ -33,3 +33,11 @@
 完成fofa查询，可根据语句进行查询
 
 ![img](img/7F584117-7397-4EE0-8283-9021F8608341.png)
+
+### 2023.4.13
+
+完成hunter查询，配置apikey后可调用官方api查询
+
+![img](img/A9EC28D4-E2A0-41F7-945C-BE9FB030FEF9.png)
+
+![img](img/99B5105B-7FF5-44B0-A423-37A8FF5FF72C.png)
