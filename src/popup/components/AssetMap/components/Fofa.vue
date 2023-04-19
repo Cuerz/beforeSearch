@@ -12,13 +12,24 @@
       <el-input-number v-model="f_num" :min="1" class="mx-4" />
       <el-button
         type="success"
-        style="height: 38px; margin-left: 50px"
+        style="height: 38px; margin-left: 15px"
         text
         bg
         :disabled="is_set"
         @click="f_go"
         >查询</el-button
       >
+      <download-excel
+        class="btn btn-default"
+        :data="tableData"
+        :fields="json_fields"
+        worksheet="My Worksheet"
+        name="Output.xls"
+      >
+        <el-button type="info" style="height: 38px; margin-left: 15px" text bg
+          >导出</el-button
+        >
+      </download-excel>
     </div>
     <el-table
       :data="tableData"
@@ -26,7 +37,7 @@
       stripe
       style="width: 100%; margin-top: 30px"
     >
-      <el-table-column type="index" width="50" />
+      <el-table-column type="index" label="ID" width="50" />
       <el-table-column prop="ip" label="IP" width="130" />
       <el-table-column prop="port" label="Port" width="80" />
       <el-table-column prop="domain" label="Domain" width="150" />
@@ -48,6 +59,13 @@ export default {
   name: 'FofaSearch',
   data() {
     return {
+      json_fields: {
+        IP: 'ip',
+        Port: 'port',
+        Domain: 'domain',
+        Title: 'title',
+        Server: 'server',
+      },
       is_set: false,
       f_sentence: '',
       f_num: '',

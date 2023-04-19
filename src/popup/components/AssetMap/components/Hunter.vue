@@ -12,13 +12,23 @@
       <el-input-number v-model="h_num" :min="1" class="mx-4" />
       <el-button
         type="success"
-        style="height: 38px; margin-left: 50px"
+        style="height: 38px; margin-left: 15px"
         text
         bg
         :disabled="is_set"
-        @click="h_go"
         >查询</el-button
       >
+      <download-excel
+        class="btn btn-default"
+        :data="tableData"
+        :fields="json_fields"
+        worksheet="My Worksheet"
+        name="Output.xls"
+      >
+        <el-button type="info" style="height: 38px; margin-left: 15px" text bg
+          >导出</el-button
+        >
+      </download-excel>
     </div>
     <el-table
       :data="tableData"
@@ -48,6 +58,13 @@ export default {
   name: 'HunterSearch',
   data() {
     return {
+      json_fields: {
+        IP: 'ip',
+        Port: 'port',
+        Domain: 'domain',
+        Title: 'title',
+        Country: 'country',
+      },
       is_set: false,
       h_sentence: '',
       h_num: '',
